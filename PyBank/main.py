@@ -4,7 +4,7 @@ import csv
 #Path to collect data from PyBank folder
 csvpath = os.path.join("budget_data.csv")
 
-
+#Lists to store data
 total = []
 profitloss = []
 month = []

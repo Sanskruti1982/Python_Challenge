@@ -1,17 +1,23 @@
 import os
 import csv
 
+#Path to collect data from PyPoll folder
 electioncsv = os.path.join('election_data.csv')
 
+#Lists to store data
 total = []
 voterid = []
 county = []
 candidate = []
 
+#Read in the CSV file
 with open(electioncsv,'r') as csvfile:
+    #Split the data on commas
     csvreader = csv.reader(csvfile, delimiter=",")
+    #Skip headerrow
     header = next(csvreader)
     
+    #Loop through the data to get count of each candidate and percentage of votes and winner of the most popular votes
     total = 0
     count = 0
     count1 = 0
@@ -36,6 +42,7 @@ with open(electioncsv,'r') as csvfile:
     percent3 = count3/length * 100
     winner = max(set(candidate), key = candidate.count)
 
+#Printing the analysis on to the terminal
 print("Election Results")
 print("---------------------------")
 print("Total Votes: " + str(length))
@@ -48,6 +55,7 @@ print("---------------------------")
 print("Winner: " + winner)
 print("---------------------------")
 
+#Creating a text file to print the final output result
 output_file = os.path.join("final.txt")
 
 with open(output_file, "w") as datafile:
