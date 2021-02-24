@@ -43,11 +43,11 @@ with open(csvpath,'r') as csvfile:
         previousvalue = int(row[1])
         
         #Defining maximum and minimum increase
-        #Getting the maximum of the change and getting the corresponding to month
+        #Getting the maximum of the change and getting the corresponding to motnh
         if change > maxinc:
             maxinc = change
             maxincmonth = row[0]
-        #Getting the minimum of the change and getting the corresponding to month
+        #Getting the minimum of the change and getting the corresponding to motnh
         if change < mininc:
             mininc = change
             minincmonth = row[0]
@@ -76,3 +76,4 @@ print("Total: " + "$" + str(total))
 print("Average Change: " + "$" + str(round(avgchange,2)))
 print("Greatest Increase in Profits: " +  str(maxincmonth) + " (" + "$" + str(maxinc) + ")")
 print("Greatest Decrease in Profits: " +  str(minincmonth) + " (" + "$" + str(mininc) + ")")
+
